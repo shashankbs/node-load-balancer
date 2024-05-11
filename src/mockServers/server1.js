@@ -5,8 +5,6 @@ const server = http.createServer();
 server.on("request", (req, res) => {
   if (req.method == "GET") {
     if (req.url == "/health") {
-      console.log("Received health request");
-
       res.writeHead(200, { "Content-Type": "application/json" });
       const response = JSON.stringify({ status: "OK" });
       res.end(response);
